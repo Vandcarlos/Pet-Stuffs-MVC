@@ -31,13 +31,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HOO-rS-uBV">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainPetCell" rowHeight="50" id="HOO-rS-uBV" customClass="MainPetCell" customModule="Pet_Stuffs_MVC" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HOO-rS-uBV" id="FL4-vb-il2">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PetCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HOO-rS-uBV" id="FL4-vb-il2">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ru-TK-Eyj">
+                                            <rect key="frame" x="20" y="14.5" width="72" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1Ru-TK-Eyj" firstAttribute="leading" secondItem="FL4-vb-il2" secondAttribute="leading" constant="20" id="QCL-s6-Sxf"/>
+                                        <constraint firstItem="1Ru-TK-Eyj" firstAttribute="centerY" secondItem="FL4-vb-il2" secondAttribute="centerY" id="TzD-t3-72P"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1Ru-TK-Eyj" secondAttribute="trailing" constant="20" symbolic="YES" id="svO-6l-Mm6"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="petNameLabel" destination="1Ru-TK-Eyj" id="Rca-ck-DFG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -46,12 +62,26 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Lista de Pets" id="daX-pW-Z6G">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Oil-TS-zgD"/>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Oil-TS-zgD">
+                            <connections>
+                                <segue destination="oft-nf-Y3B" kind="show" id="ufN-rb-99u"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXV-y0-0D8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="620" y="62"/>
+        </scene>
+        <!--AddPet-->
+        <scene sceneID="QOl-ns-cG5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddPet" id="oft-nf-Y3B" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="0IM-Bh-qyx"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NpJ-tL-fbE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1228" y="-44"/>
         </scene>
     </scenes>
     <resources>

@@ -15,6 +15,11 @@
 		A019A048247DFD0C00C4F636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A019A046247DFD0C00C4F636 /* LaunchScreen.storyboard */; };
 		A019A059247DFEC300C4F636 /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A058247DFEC300C4F636 /* PetModel.swift */; };
 		A019A05B247DFED700C4F636 /* StuffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A05A247DFED700C4F636 /* StuffModel.swift */; };
+		A019A05E247E050E00C4F636 /* MainPetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A05D247E050E00C4F636 /* MainPetCell.swift */; };
+		A019A060247E058600C4F636 /* MainPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A05F247E058600C4F636 /* MainPet.swift */; };
+		A019A063247E06B500C4F636 /* AddPet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A019A062247E06B500C4F636 /* AddPet.storyboard */; };
+		A019A065247E07E500C4F636 /* AddPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A064247E07E500C4F636 /* AddPetViewController.swift */; };
+		A019A068247E0BBD00C4F636 /* PetValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A067247E0BBD00C4F636 /* PetValidation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		A019A049247DFD0C00C4F636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A019A058247DFEC300C4F636 /* PetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
 		A019A05A247DFED700C4F636 /* StuffModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffModel.swift; sourceTree = "<group>"; };
+		A019A05D247E050E00C4F636 /* MainPetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPetCell.swift; sourceTree = "<group>"; };
+		A019A05F247E058600C4F636 /* MainPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPet.swift; sourceTree = "<group>"; };
+		A019A062247E06B500C4F636 /* AddPet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPet.storyboard; sourceTree = "<group>"; };
+		A019A064247E07E500C4F636 /* AddPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewController.swift; sourceTree = "<group>"; };
+		A019A067247E0BBD00C4F636 /* PetValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetValidation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				A019A051247DFD4600C4F636 /* Main */,
+				A019A061247E06A500C4F636 /* Add Pet */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -92,6 +103,8 @@
 			children = (
 				A019A03F247DFD0900C4F636 /* MainViewController.swift */,
 				A019A041247DFD0900C4F636 /* Main.storyboard */,
+				A019A05D247E050E00C4F636 /* MainPetCell.swift */,
+				A019A05F247E058600C4F636 /* MainPet.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -99,6 +112,7 @@
 		A019A052247DFE6400C4F636 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				A019A066247E0B7A00C4F636 /* Constants */,
 				A019A053247DFE6A00C4F636 /* Services */,
 			);
 			path = Commons;
@@ -119,6 +133,23 @@
 				A019A05A247DFED700C4F636 /* StuffModel.swift */,
 			);
 			path = "Data Store";
+			sourceTree = "<group>";
+		};
+		A019A061247E06A500C4F636 /* Add Pet */ = {
+			isa = PBXGroup;
+			children = (
+				A019A062247E06B500C4F636 /* AddPet.storyboard */,
+				A019A064247E07E500C4F636 /* AddPetViewController.swift */,
+			);
+			path = "Add Pet";
+			sourceTree = "<group>";
+		};
+		A019A066247E0B7A00C4F636 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				A019A067247E0BBD00C4F636 /* PetValidation.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +212,7 @@
 			files = (
 				A019A048247DFD0C00C4F636 /* LaunchScreen.storyboard in Resources */,
 				A019A045247DFD0C00C4F636 /* Assets.xcassets in Resources */,
+				A019A063247E06B500C4F636 /* AddPet.storyboard in Resources */,
 				A019A043247DFD0900C4F636 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,8 +226,12 @@
 			files = (
 				A019A05B247DFED700C4F636 /* StuffModel.swift in Sources */,
 				A019A040247DFD0900C4F636 /* MainViewController.swift in Sources */,
+				A019A060247E058600C4F636 /* MainPet.swift in Sources */,
 				A019A03C247DFD0900C4F636 /* AppDelegate.swift in Sources */,
 				A019A059247DFEC300C4F636 /* PetModel.swift in Sources */,
+				A019A05E247E050E00C4F636 /* MainPetCell.swift in Sources */,
+				A019A068247E0BBD00C4F636 /* PetValidation.swift in Sources */,
+				A019A065247E07E500C4F636 /* AddPetViewController.swift in Sources */,
 				A019A03E247DFD0900C4F636 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

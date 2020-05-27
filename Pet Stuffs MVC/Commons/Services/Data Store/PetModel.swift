@@ -12,7 +12,7 @@ struct PetModel: Codable {
 
     static let dataKey = "pet-model-key"
 
-    let uuid = UUID()
+    let uuid: String = UUID().uuidString
     let name: String
     let gender: String
     let specie: String
@@ -22,12 +22,12 @@ struct PetModel: Codable {
     }
 
     static func getAll() -> [PetModel] {
-        let petsSerialized = UserDefaults.standard.array(forKey: PetModel.dataKey)
-        let pets = petsSerialized as? [PetModel]
+        guard let petsData = UserDefaults.standard.data(forKey: PetModel.dataKey) else { return [] }
+        let pets = try? JSONDecoder().decode([PetModel].self, from: petsData)
         return pets ?? []
     }
 
-    static func get(with uuid: UUID) -> PetModel? {
+    static func get(with uuid: String) -> PetModel? {
         return self.getAll().first(where: { $0.uuid == uuid })
     }
 
@@ -40,7 +40,8 @@ struct PetModel: Codable {
             pets.append(self)
         }
 
-        UserDefaults.standard.set(pets, forKey: PetModel.dataKey)
+        let petsEncoded = try? JSONEncoder().encode(pets)
+        UserDefaults.standard.set(petsEncoded, forKey: PetModel.dataKey)
     }
 
 }
