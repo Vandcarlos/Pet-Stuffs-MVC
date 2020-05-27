@@ -1,5 +1,5 @@
 //
-//  AddPetViewController.swift
+//  PetFormViewController.swift
 //  Pet Stuffs MVC
 //
 //  Created by Vandcarlos Mouzinho Sandes Junior on 26/05/20.
@@ -8,11 +8,13 @@
 
 import UIKit
 
-final class AddPetViewController: UIViewController {
+final class PetFormViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UITextField!
     @IBOutlet weak var genderLabel: UITextField!
     @IBOutlet weak var specieLabel: UITextField!
+
+    var petForm: PetForm?
 
     private let errorMessage = """
     Verifique as condições
@@ -21,24 +23,37 @@ final class AddPetViewController: UIViewController {
     A espécie possuí no mínimo: \(PetValidation.minSpecieSize) caracteres
     """
 
-    private typealias PetFormInput = (String, String, String)
+    override func viewDidLoad() {
+        if let petForm = self.petForm {
+            self.fullFillForm(with: petForm)
+            self.title = "Editar Pet"
+        } else {
+            self.title = "Adicionar Pet"
+        }
+    }
 
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
-        if let (name, gender, specie) = self.getValidForm() {
-            self.savePet(name: name, gender: gender, specie: specie)
+        if let petForm = self.getValidForm() {
+            self.savePet(with: petForm)
             self.navigationController?.popViewController(animated: true)
         } else {
             self.showError()
         }
     }
 
-    private func getValidForm() -> PetFormInput? {
+    private func fullFillForm(with petForm: PetForm) {
+        self.nameLabel.text = petForm.name
+        self.genderLabel.text = petForm.gender
+        self.specieLabel.text = petForm.specie
+    }
+
+    private func getValidForm() -> PetForm? {
         guard let name = self.getValidName(),
             let gender = self.getValidGender(),
             let specie = self.getValidSpecie()
             else { return nil }
 
-        return PetFormInput(name, gender, specie)
+        return PetForm(uuid: self.petForm?.uuid, name: name, gender: gender, specie: specie)
     }
 
     private func getValidName() -> String? {
@@ -65,8 +80,15 @@ final class AddPetViewController: UIViewController {
         }
     }
 
-    private func savePet(name: String, gender: String, specie: String) {
-        PetModel(name: name, gender: gender, specie: specie).saveOrUpdate()
+    private func savePet(with petForm: PetForm) {
+        if let uuid = petForm.uuid, var pet = PetModel.get(with: uuid) {
+            pet.name = petForm.name
+            pet.gender = petForm.gender
+            pet.specie = petForm.specie
+            pet.saveOrUpdate()
+        } else {
+            PetModel(name: petForm.name, gender: petForm.gender, specie: petForm.specie).saveOrUpdate()
+        }
     }
 
     private func showError() {

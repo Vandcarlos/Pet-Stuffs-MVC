@@ -10,7 +10,7 @@
         <!--Adicionar Pet-->
         <scene sceneID="lSP-hD-Qqs">
             <objects>
-                <viewController title="Adicionar Pet" id="hrD-Qd-8PP" customClass="AddPetViewController" customModule="Pet_Stuffs_MVC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Adicionar Pet" id="hrD-Qd-8PP" customClass="PetFormViewController" customModule="Pet_Stuffs_MVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yQp-ww-tFc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -13,9 +13,9 @@ struct PetModel: Codable {
     static let dataKey = "pet-model-key"
 
     let uuid: String = UUID().uuidString
-    let name: String
-    let gender: String
-    let specie: String
+    var name: String
+    var gender: String
+    var specie: String
 
     var stuffs: [StuffModel] {
         StuffModel.get(with: self.uuid)
