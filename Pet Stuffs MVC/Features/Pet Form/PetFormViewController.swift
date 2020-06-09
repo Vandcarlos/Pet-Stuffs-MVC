@@ -14,7 +14,11 @@ final class PetFormViewController: UIViewController {
     @IBOutlet weak var genderLabel: UITextField!
     @IBOutlet weak var specieLabel: UITextField!
 
-    var pet: PetModel?
+    var pet: PetModel? {
+        willSet(value) {
+            self.title = value == nil ? "Adicionar Pet" : "Editar Pet"
+        }
+    }
 
     private let errorMessage = """
     Verifique as condições
@@ -51,9 +55,6 @@ extension PetFormViewController {
     private func checkIfHasPet() {
         if let pet = self.pet {
             self.fullFillForm(with: pet)
-            self.title = "Editar Pet"
-        } else {
-            self.title = "Adicionar Pet"
         }
     }
 

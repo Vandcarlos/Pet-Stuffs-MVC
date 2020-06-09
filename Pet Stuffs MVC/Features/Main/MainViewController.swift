@@ -11,16 +11,36 @@ import UIKit
 class MainViewController: UITableViewController {
 
     private let reuseIdenfier = "MainPetCell"
+
     private var pets: [PetModel] = []
+    private var petToShow: PetModel?
+
+    private enum Segue: String {
+
+        case toPetForm = "segueToPetForm"
+        case toPetDetails = "segueToPetDetails"
+
+    }
 
     override func viewDidAppear(_ animated: Bool) {
+        self.petToShow = nil
         self.getPetsOnDB()
         self.tableView.reloadData()
     }
 
-    private func getPetsOnDB() {
-        self.pets = PetModel.getAll()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case Segue.toPetForm.rawValue: break
+        case Segue.toPetDetails.rawValue: self.prepareForSegueToPetDetails(segue.destination)
+        default: break
+        }
     }
+
+}
+
+// MARK: Table view data source
+
+extension MainViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -40,17 +60,35 @@ class MainViewController: UITableViewController {
         return cell
     }
 
+}
+
+// MARK: Table view delegate
+
+extension MainViewController {
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "PetDetails", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "PetDetails") as! PetDetailsViewController
-        viewController.pet = self.pets[indexPath.row]
-        self.navigationController?.pushViewController(viewController, animated: true)
-        
+        self.petToShow = self.pets[indexPath.row]
+        self.performSegue(withIdentifier: Segue.toPetDetails.rawValue, sender: self)
     }
 
 }
 
+// MARK: Private methods
+
+extension MainViewController {
+
+    private func getPetsOnDB() {
+        self.pets = PetModel.getAll()
+    }
+
+    private func prepareForSegueToPetDetails(_ viewController: UIViewController) {
+        guard let petDetails = viewController as? PetDetailsViewController else { return }
+        guard let pet = self.petToShow else { return }
+        petDetails.pet = pet
+    }
+
+}

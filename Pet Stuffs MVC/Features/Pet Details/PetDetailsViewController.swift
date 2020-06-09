@@ -11,6 +11,7 @@ import UIKit
 final class PetDetailsViewController: UIViewController {
 
     private let reuseIdenfier = "StuffCell"
+
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var petGenderLabel: UILabel!
     @IBOutlet weak var petSpecieLabel: UILabel!
@@ -40,27 +41,6 @@ final class PetDetailsViewController: UIViewController {
         case Segue.toStuffForm.rawValue: self.prepareSegueToStuffForm(segue.destination)
         default: break
         }
-    }
-
-    private func prepareSegueToPetForm(_ viewController: UIViewController) {
-        guard let petForm = viewController as? PetFormViewController else { return }
-        petForm.pet = self.pet
-    }
-
-    private func prepareSegueToStuffForm(_ viewController: UIViewController) {
-        guard let stuffForm = viewController as? StuffFormViewController else { return }
-        stuffForm.petUuid = self.pet.uuid
-        stuffForm.stuff = self.stuffToEdit
-    }
-
-    private func fullFillPet() {
-        self.petNameLabel.text = pet.name
-        self.petGenderLabel.text = "Gênero: \(pet.gender)"
-        self.petSpecieLabel.text = "Espécie: \(pet.specie)"
-    }
-
-    private func checkForPetUpdates() {
-        self.pet = PetModel.get(byUuid: self.pet.uuid)
     }
 
 }
@@ -93,6 +73,33 @@ extension PetDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.stuffToEdit = self.pet.stuffs[indexPath.row]
         self.performSegue(withIdentifier: Segue.toStuffForm.rawValue, sender: self)
+    }
+
+}
+
+// MARK: Private methods
+
+extension PetDetailsViewController {
+
+    private func prepareSegueToPetForm(_ viewController: UIViewController) {
+        guard let petForm = viewController as? PetFormViewController else { return }
+        petForm.pet = self.pet
+    }
+
+    private func prepareSegueToStuffForm(_ viewController: UIViewController) {
+        guard let stuffForm = viewController as? StuffFormViewController else { return }
+        stuffForm.petUuid = self.pet.uuid
+        stuffForm.stuff = self.stuffToEdit
+    }
+
+    private func fullFillPet() {
+        self.petNameLabel.text = pet.name
+        self.petGenderLabel.text = "Gênero: \(pet.gender)"
+        self.petSpecieLabel.text = "Espécie: \(pet.specie)"
+    }
+
+    private func checkForPetUpdates() {
+        self.pet = PetModel.get(byUuid: self.pet.uuid)
     }
 
 }

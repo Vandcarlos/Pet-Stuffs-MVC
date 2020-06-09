@@ -15,7 +15,11 @@ final class StuffFormViewController: UIViewController {
     @IBOutlet weak var priceLabel: UITextField!
 
     var petUuid: String!
-    var stuff: StuffModel?
+    var stuff: StuffModel? {
+        willSet(value) {
+            self.title = value == nil ? "Adicionar Stuff" : "Editar Stuff"
+        }
+    }
 
     private let priceDelegate = PriceDelagate()
 
@@ -31,6 +35,12 @@ final class StuffFormViewController: UIViewController {
         self.checkIfHasStuff()
     }
 
+}
+
+// MARK: View actions
+
+extension StuffFormViewController {
+
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         if let stuffForm = self.getValidForm() {
             self.saveStuff(with: stuffForm)
@@ -40,12 +50,15 @@ final class StuffFormViewController: UIViewController {
         }
     }
 
+}
+
+// MARK: Private methods
+
+extension StuffFormViewController {
+
     private func checkIfHasStuff() {
         if let stuff = self.stuff {
             self.fullFillForm(with: stuff)
-            self.title = "Editar Stuff"
-        } else {
-            self.title = "Adicionar Stuff"
         }
     }
 
