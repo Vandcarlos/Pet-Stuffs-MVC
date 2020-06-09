@@ -31,6 +31,17 @@ struct PetModel: Codable {
         return self.getAll().first(where: { $0.uuid == uuid })
     }
 
+    static func delete(withUuid uuid: String) {
+        var pets = PetModel.getAll()
+
+        if let index = pets.firstIndex(where: { $0.uuid == uuid }) {
+            pets.remove(at: index)
+        }
+
+        let petsEncoded = try? JSONEncoder().encode(pets)
+        UserDefaults.standard.set(petsEncoded, forKey: PetModel.dataKey)
+    }
+
     func saveOrUpdate() {
         var pets = PetModel.getAll()
 

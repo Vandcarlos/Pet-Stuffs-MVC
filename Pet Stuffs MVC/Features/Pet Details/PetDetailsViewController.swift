@@ -75,6 +75,15 @@ extension PetDetailsViewController: UITableViewDelegate {
         self.performSegue(withIdentifier: Segue.toStuffForm.rawValue, sender: self)
     }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let stuff = self.pet.stuffs[indexPath.row]
+            StuffModel.delete(withUuid: stuff.uuid)
+            self.checkForPetUpdates()
+            self.tableView.reloadData()
+        }
+    }
+
 }
 
 // MARK: Private methods

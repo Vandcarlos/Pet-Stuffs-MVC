@@ -75,6 +75,15 @@ extension MainViewController {
         self.performSegue(withIdentifier: Segue.toPetDetails.rawValue, sender: self)
     }
 
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let pet = self.pets[indexPath.row]
+            PetModel.delete(withUuid: pet.uuid)
+            self.getPetsOnDB()
+            self.tableView.reloadData()
+        }
+    }
+
 }
 
 // MARK: Private methods

@@ -38,6 +38,17 @@ struct StuffModel: Codable {
         return stuffs.first(where: { $0.uuid == uuid })
     }
 
+    static func delete(withUuid uuid: String) {
+        var stuffs = StuffModel.getAll()
+
+        if let index = stuffs.firstIndex(where: { $0.uuid == uuid }) {
+            stuffs.remove(at: index)
+        }
+
+        let stuffsEncoded = try? JSONEncoder().encode(stuffs)
+        UserDefaults.standard.set(stuffsEncoded, forKey: StuffModel.dataKey)
+    }
+
     func saveOrUpdate() {
         var stuffs = StuffModel.getAll()
 
