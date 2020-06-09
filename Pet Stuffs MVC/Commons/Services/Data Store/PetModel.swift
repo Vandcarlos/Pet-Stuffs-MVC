@@ -12,13 +12,13 @@ struct PetModel: Codable {
 
     static let dataKey = "pet-model-key"
 
-    let uuid: String = UUID().uuidString
+    var uuid: String = UUID().uuidString
     var name: String
     var gender: String
     var specie: String
 
     var stuffs: [StuffModel] {
-        StuffModel.get(with: self.uuid)
+        StuffModel.getAll(filterByPetUuid: self.uuid)
     }
 
     static func getAll() -> [PetModel] {
@@ -27,7 +27,7 @@ struct PetModel: Codable {
         return pets ?? []
     }
 
-    static func get(with uuid: String) -> PetModel? {
+    static func get(byUuid uuid: String) -> PetModel? {
         return self.getAll().first(where: { $0.uuid == uuid })
     }
 

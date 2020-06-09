@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hkM-WB-y1B">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detalhes do Pet-->
+        <scene sceneID="UsY-kz-CZA">
+            <objects>
+                <viewController storyboardIdentifier="PetDetails" id="hkM-WB-y1B" customClass="PetDetailsViewController" customModule="Pet_Stuffs_MVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K2F-sR-g6L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrA-Ux-qrd">
+                                <rect key="frame" x="20" y="98" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBL-mP-rMO">
+                                <rect key="frame" x="20" y="139" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Specie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxl-Ye-Joy">
+                                <rect key="frame" x="20" y="180" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xal-mt-FdJ">
+                                <rect key="frame" x="156" y="221" width="102" height="30"/>
+                                <state key="normal" title="Adicionar Stuff"/>
+                                <connections>
+                                    <segue destination="hq1-tQ-gbm" kind="show" identifier="segueToStuffForm" id="2AC-Pj-eQS"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LwZ-HE-k7h">
+                                <rect key="frame" x="0.0" y="271" width="414" height="591"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StuffCell" id="o2p-10-Pkc" customClass="PetStuffCell" customModule="Pet_Stuffs_MVC" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="73.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o2p-10-Pkc" id="zgE-iZ-9CL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="73.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stuff Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68D-gZ-OpE">
+                                                    <rect key="frame" x="20" y="5" width="87" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stuff Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cos-9E-oWF">
+                                                    <rect key="frame" x="20" y="47" width="81" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stuff Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqi-MB-Lnz">
+                                                    <rect key="frame" x="20" y="26" width="79.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Aqi-MB-Lnz" firstAttribute="top" secondItem="68D-gZ-OpE" secondAttribute="bottom" id="8ko-S4-5Pu"/>
+                                                <constraint firstItem="cos-9E-oWF" firstAttribute="leading" secondItem="Aqi-MB-Lnz" secondAttribute="leading" id="LQn-MT-B2u"/>
+                                                <constraint firstItem="Aqi-MB-Lnz" firstAttribute="leading" secondItem="68D-gZ-OpE" secondAttribute="leading" id="Tpc-g1-pIy"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cos-9E-oWF" secondAttribute="bottom" constant="5" id="V9g-9t-0f2"/>
+                                                <constraint firstItem="cos-9E-oWF" firstAttribute="top" secondItem="Aqi-MB-Lnz" secondAttribute="bottom" id="ett-8y-ZCV"/>
+                                                <constraint firstItem="68D-gZ-OpE" firstAttribute="leading" secondItem="zgE-iZ-9CL" secondAttribute="leading" constant="20" id="ezW-mJ-PmX"/>
+                                                <constraint firstItem="68D-gZ-OpE" firstAttribute="top" secondItem="zgE-iZ-9CL" secondAttribute="top" constant="5" id="sD7-gR-0Ni"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="stuffNameLabel" destination="68D-gZ-OpE" id="Kmh-q1-BkH"/>
+                                            <outlet property="stuffPriceLabel" destination="cos-9E-oWF" id="ltf-al-woC"/>
+                                            <outlet property="stuffTypeLabel" destination="Aqi-MB-Lnz" id="Arc-ru-kRS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hkM-WB-y1B" id="tnp-yF-L5i"/>
+                                    <outlet property="delegate" destination="hkM-WB-y1B" id="bTa-lJ-IZz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LwZ-HE-k7h" firstAttribute="top" secondItem="Xal-mt-FdJ" secondAttribute="bottom" constant="20" id="1N1-nk-rkM"/>
+                            <constraint firstItem="LwZ-HE-k7h" firstAttribute="leading" secondItem="kE3-Kc-Sjl" secondAttribute="leading" id="EOx-9i-n6m"/>
+                            <constraint firstItem="Xal-mt-FdJ" firstAttribute="centerX" secondItem="kE3-Kc-Sjl" secondAttribute="centerX" id="JPG-6J-Q5I"/>
+                            <constraint firstItem="oxl-Ye-Joy" firstAttribute="top" secondItem="BBL-mP-rMO" secondAttribute="bottom" constant="20" id="JZE-sQ-Wo3"/>
+                            <constraint firstItem="zrA-Ux-qrd" firstAttribute="top" secondItem="kE3-Kc-Sjl" secondAttribute="top" constant="10" id="Rok-kN-Hae"/>
+                            <constraint firstItem="oxl-Ye-Joy" firstAttribute="leading" secondItem="BBL-mP-rMO" secondAttribute="leading" id="UA5-be-fgh"/>
+                            <constraint firstItem="kE3-Kc-Sjl" firstAttribute="bottom" secondItem="LwZ-HE-k7h" secondAttribute="bottom" id="Wb3-Gw-scU"/>
+                            <constraint firstItem="kE3-Kc-Sjl" firstAttribute="trailing" secondItem="LwZ-HE-k7h" secondAttribute="trailing" id="aUP-WU-pUh"/>
+                            <constraint firstItem="zrA-Ux-qrd" firstAttribute="leading" secondItem="kE3-Kc-Sjl" secondAttribute="leading" constant="20" id="g58-Fc-JZx"/>
+                            <constraint firstItem="BBL-mP-rMO" firstAttribute="top" secondItem="zrA-Ux-qrd" secondAttribute="bottom" constant="20" id="h0c-jb-QWU"/>
+                            <constraint firstItem="BBL-mP-rMO" firstAttribute="leading" secondItem="zrA-Ux-qrd" secondAttribute="leading" id="mey-fH-Njv"/>
+                            <constraint firstItem="Xal-mt-FdJ" firstAttribute="top" secondItem="oxl-Ye-Joy" secondAttribute="bottom" constant="20" id="xye-gZ-gaF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kE3-Kc-Sjl"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detalhes do Pet" id="cbk-fg-PcP">
+                        <barButtonItem key="rightBarButtonItem" title="Editar" id="gTz-7Y-pUL">
+                            <connections>
+                                <segue destination="LLK-Yo-UqG" kind="show" identifier="segueToPetForm" id="zsG-nk-Pxq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="petGenderLabel" destination="BBL-mP-rMO" id="QCE-kA-Bh8"/>
+                        <outlet property="petNameLabel" destination="zrA-Ux-qrd" id="kHH-8v-Thj"/>
+                        <outlet property="petSpecieLabel" destination="oxl-Ye-Joy" id="eJm-5p-C49"/>
+                        <outlet property="tableView" destination="LwZ-HE-k7h" id="wFg-jm-5ZS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VeI-g0-e7r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-216" y="-3"/>
+        </scene>
+        <!--PetForm-->
+        <scene sceneID="Tmf-pn-tJa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PetForm" id="LLK-Yo-UqG" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="r2B-Ls-1LG"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RIw-8g-fDG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="556" y="-144"/>
+        </scene>
+        <!--StuffForm-->
+        <scene sceneID="a6H-Xy-y71">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StuffForm" id="hq1-tQ-gbm" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Lgy-GS-Nqh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="32V-Ro-Jpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="614" y="-23"/>
+        </scene>
+    </scenes>
+</document>

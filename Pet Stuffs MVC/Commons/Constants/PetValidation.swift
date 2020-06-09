@@ -6,8 +6,6 @@
 //  Copyright © 2020 Vandcarlos Mouzinho Sandes Junior. All rights reserved.
 //
 
-import Foundation
-
 final class PetValidation {
 
     static let minNameSize = 2

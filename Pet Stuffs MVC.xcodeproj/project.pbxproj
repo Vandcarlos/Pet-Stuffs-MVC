@@ -16,11 +16,20 @@
 		A019A059247DFEC300C4F636 /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A058247DFEC300C4F636 /* PetModel.swift */; };
 		A019A05B247DFED700C4F636 /* StuffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A05A247DFED700C4F636 /* StuffModel.swift */; };
 		A019A05E247E050E00C4F636 /* MainPetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A05D247E050E00C4F636 /* MainPetCell.swift */; };
-		A019A060247E058600C4F636 /* MainPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A05F247E058600C4F636 /* MainPet.swift */; };
 		A019A063247E06B500C4F636 /* PetForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A019A062247E06B500C4F636 /* PetForm.storyboard */; };
 		A019A065247E07E500C4F636 /* PetFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A064247E07E500C4F636 /* PetFormViewController.swift */; };
 		A019A068247E0BBD00C4F636 /* PetValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A067247E0BBD00C4F636 /* PetValidation.swift */; };
-		A019A06A247E8A1100C4F636 /* PetForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A069247E8A1100C4F636 /* PetForm.swift */; };
+		A019A06D247E8C7000C4F636 /* PetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A06C247E8C7000C4F636 /* PetDetailsViewController.swift */; };
+		A019A071247E8C9000C4F636 /* PetDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A019A070247E8C9000C4F636 /* PetDetails.storyboard */; };
+		A019A073247E8D0000C4F636 /* PetForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A072247E8D0000C4F636 /* PetForm.swift */; };
+		A019A075247E917300C4F636 /* PetStuffCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A074247E917300C4F636 /* PetStuffCell.swift */; };
+		A019A078247E94D100C4F636 /* StuffFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A077247E94D100C4F636 /* StuffFormViewController.swift */; };
+		A019A07A247E951800C4F636 /* StuffForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A079247E951800C4F636 /* StuffForm.swift */; };
+		A019A07C247E955B00C4F636 /* StuffValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019A07B247E955B00C4F636 /* StuffValidation.swift */; };
+		A08561F6248FD62A00ACE833 /* StuffForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08561F5248FD62A00ACE833 /* StuffForm.storyboard */; };
+		A0856200248FDDF500ACE833 /* StringToLocaleDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08561FF248FDDF500ACE833 /* StringToLocaleDouble.swift */; };
+		A0856202248FDE6100ACE833 /* PriceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0856201248FDE6100ACE833 /* PriceDelegate.swift */; };
+		A0856204248FE22B00ACE833 /* DoubleDecimalDigitis.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0856203248FE22B00ACE833 /* DoubleDecimalDigitis.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +44,20 @@
 		A019A058247DFEC300C4F636 /* PetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
 		A019A05A247DFED700C4F636 /* StuffModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffModel.swift; sourceTree = "<group>"; };
 		A019A05D247E050E00C4F636 /* MainPetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPetCell.swift; sourceTree = "<group>"; };
-		A019A05F247E058600C4F636 /* MainPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPet.swift; sourceTree = "<group>"; };
 		A019A062247E06B500C4F636 /* PetForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetForm.storyboard; sourceTree = "<group>"; };
 		A019A064247E07E500C4F636 /* PetFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFormViewController.swift; sourceTree = "<group>"; };
 		A019A067247E0BBD00C4F636 /* PetValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetValidation.swift; sourceTree = "<group>"; };
-		A019A069247E8A1100C4F636 /* PetForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetForm.swift; sourceTree = "<group>"; };
+		A019A06C247E8C7000C4F636 /* PetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsViewController.swift; sourceTree = "<group>"; };
+		A019A070247E8C9000C4F636 /* PetDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PetDetails.storyboard; sourceTree = "<group>"; };
+		A019A072247E8D0000C4F636 /* PetForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetForm.swift; sourceTree = "<group>"; };
+		A019A074247E917300C4F636 /* PetStuffCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStuffCell.swift; sourceTree = "<group>"; };
+		A019A077247E94D100C4F636 /* StuffFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffFormViewController.swift; sourceTree = "<group>"; };
+		A019A079247E951800C4F636 /* StuffForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffForm.swift; sourceTree = "<group>"; };
+		A019A07B247E955B00C4F636 /* StuffValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffValidation.swift; sourceTree = "<group>"; };
+		A08561F5248FD62A00ACE833 /* StuffForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StuffForm.storyboard; sourceTree = "<group>"; };
+		A08561FF248FDDF500ACE833 /* StringToLocaleDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToLocaleDouble.swift; sourceTree = "<group>"; };
+		A0856201248FDE6100ACE833 /* PriceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceDelegate.swift; sourceTree = "<group>"; };
+		A0856203248FE22B00ACE833 /* DoubleDecimalDigitis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleDecimalDigitis.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +114,8 @@
 			children = (
 				A019A051247DFD4600C4F636 /* Main */,
 				A019A061247E06A500C4F636 /* Pet Form */,
+				A019A06B247E8C5800C4F636 /* Pet Details */,
+				A019A076247E94B900C4F636 /* Stuff Form */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -103,10 +123,9 @@
 		A019A051247DFD4600C4F636 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				A019A03F247DFD0900C4F636 /* MainViewController.swift */,
 				A019A041247DFD0900C4F636 /* Main.storyboard */,
+				A019A03F247DFD0900C4F636 /* MainViewController.swift */,
 				A019A05D247E050E00C4F636 /* MainPetCell.swift */,
-				A019A05F247E058600C4F636 /* MainPet.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -114,6 +133,7 @@
 		A019A052247DFE6400C4F636 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				A08561FE248FDDDD00ACE833 /* Extension */,
 				A019A066247E0B7A00C4F636 /* Constants */,
 				A019A053247DFE6A00C4F636 /* Services */,
 			);
@@ -142,7 +162,7 @@
 			children = (
 				A019A062247E06B500C4F636 /* PetForm.storyboard */,
 				A019A064247E07E500C4F636 /* PetFormViewController.swift */,
-				A019A069247E8A1100C4F636 /* PetForm.swift */,
+				A019A072247E8D0000C4F636 /* PetForm.swift */,
 			);
 			path = "Pet Form";
 			sourceTree = "<group>";
@@ -151,8 +171,39 @@
 			isa = PBXGroup;
 			children = (
 				A019A067247E0BBD00C4F636 /* PetValidation.swift */,
+				A019A07B247E955B00C4F636 /* StuffValidation.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		A019A06B247E8C5800C4F636 /* Pet Details */ = {
+			isa = PBXGroup;
+			children = (
+				A019A070247E8C9000C4F636 /* PetDetails.storyboard */,
+				A019A06C247E8C7000C4F636 /* PetDetailsViewController.swift */,
+				A019A074247E917300C4F636 /* PetStuffCell.swift */,
+			);
+			path = "Pet Details";
+			sourceTree = "<group>";
+		};
+		A019A076247E94B900C4F636 /* Stuff Form */ = {
+			isa = PBXGroup;
+			children = (
+				A08561F5248FD62A00ACE833 /* StuffForm.storyboard */,
+				A019A077247E94D100C4F636 /* StuffFormViewController.swift */,
+				A019A079247E951800C4F636 /* StuffForm.swift */,
+				A0856201248FDE6100ACE833 /* PriceDelegate.swift */,
+			);
+			path = "Stuff Form";
+			sourceTree = "<group>";
+		};
+		A08561FE248FDDDD00ACE833 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A08561FF248FDDF500ACE833 /* StringToLocaleDouble.swift */,
+				A0856203248FE22B00ACE833 /* DoubleDecimalDigitis.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,7 +265,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A019A048247DFD0C00C4F636 /* LaunchScreen.storyboard in Resources */,
+				A08561F6248FD62A00ACE833 /* StuffForm.storyboard in Resources */,
 				A019A045247DFD0C00C4F636 /* Assets.xcassets in Resources */,
+				A019A071247E8C9000C4F636 /* PetDetails.storyboard in Resources */,
 				A019A063247E06B500C4F636 /* PetForm.storyboard in Resources */,
 				A019A043247DFD0900C4F636 /* Main.storyboard in Resources */,
 			);
@@ -227,16 +280,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A019A075247E917300C4F636 /* PetStuffCell.swift in Sources */,
+				A019A07A247E951800C4F636 /* StuffForm.swift in Sources */,
+				A0856204248FE22B00ACE833 /* DoubleDecimalDigitis.swift in Sources */,
 				A019A05B247DFED700C4F636 /* StuffModel.swift in Sources */,
+				A0856200248FDDF500ACE833 /* StringToLocaleDouble.swift in Sources */,
 				A019A040247DFD0900C4F636 /* MainViewController.swift in Sources */,
-				A019A060247E058600C4F636 /* MainPet.swift in Sources */,
+				A019A073247E8D0000C4F636 /* PetForm.swift in Sources */,
 				A019A03C247DFD0900C4F636 /* AppDelegate.swift in Sources */,
 				A019A059247DFEC300C4F636 /* PetModel.swift in Sources */,
 				A019A05E247E050E00C4F636 /* MainPetCell.swift in Sources */,
 				A019A068247E0BBD00C4F636 /* PetValidation.swift in Sources */,
+				A019A07C247E955B00C4F636 /* StuffValidation.swift in Sources */,
 				A019A065247E07E500C4F636 /* PetFormViewController.swift in Sources */,
+				A0856202248FDE6100ACE833 /* PriceDelegate.swift in Sources */,
 				A019A03E247DFD0900C4F636 /* SceneDelegate.swift in Sources */,
-				A019A06A247E8A1100C4F636 /* PetForm.swift in Sources */,
+				A019A06D247E8C7000C4F636 /* PetDetailsViewController.swift in Sources */,
+				A019A078247E94D100C4F636 /* StuffFormViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

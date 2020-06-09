@@ -12,11 +12,11 @@ struct StuffModel: Codable {
 
     static let dataKey = "stuff-model-key"
 
-    let uuid: String = UUID().uuidString
-    let petUuid: String
-    let name: String
-    let type: String
-    let price: Double
+    var uuid: String = UUID().uuidString
+    var petUuid: String
+    var name: String
+    var type: String
+    var price: Double
 
     static func getAll() -> [StuffModel] {
         guard let stuffsData = UserDefaults.standard.data(forKey: StuffModel.dataKey) else { return [] }
@@ -24,13 +24,18 @@ struct StuffModel: Codable {
         return stuffs ?? []
     }
 
-    static func get(with petUuid: String) -> [StuffModel] {
-        let stuffsSerialized = UserDefaults.standard.array(forKey: StuffModel.dataKey)
-        if let stuffs = stuffsSerialized as? [StuffModel] {
+    static func getAll(filterByPetUuid petUuid: String) -> [StuffModel] {
+        guard let stuffsData = UserDefaults.standard.data(forKey: StuffModel.dataKey) else { return [] }
+        if let stuffs = try? JSONDecoder().decode([StuffModel].self, from: stuffsData) {
             return stuffs.filter { $0.petUuid == petUuid }
         } else {
             return []
         }
+    }
+
+    static func get(byUuid uuid: String) -> StuffModel? {
+        let stuffs = StuffModel.getAll()
+        return stuffs.first(where: { $0.uuid == uuid })
     }
 
     func saveOrUpdate() {

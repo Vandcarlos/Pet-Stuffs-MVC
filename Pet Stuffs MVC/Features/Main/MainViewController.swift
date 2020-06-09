@@ -11,7 +11,7 @@ import UIKit
 class MainViewController: UITableViewController {
 
     private let reuseIdenfier = "MainPetCell"
-    private var pets: [MainPet] = []
+    private var pets: [PetModel] = []
 
     override func viewDidAppear(_ animated: Bool) {
         self.getPetsOnDB()
@@ -19,7 +19,7 @@ class MainViewController: UITableViewController {
     }
 
     private func getPetsOnDB() {
-        self.pets = PetModel.getAll().compactMap { MainPet(uuid: $0.uuid, name: $0.name) }
+        self.pets = PetModel.getAll()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -42,6 +42,14 @@ class MainViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "PetDetails", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "PetDetails") as! PetDetailsViewController
+        viewController.pet = self.pets[indexPath.row]
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
     }
 
 }

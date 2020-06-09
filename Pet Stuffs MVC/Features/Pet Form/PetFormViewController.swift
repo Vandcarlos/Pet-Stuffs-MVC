@@ -14,7 +14,7 @@ final class PetFormViewController: UIViewController {
     @IBOutlet weak var genderLabel: UITextField!
     @IBOutlet weak var specieLabel: UITextField!
 
-    var petForm: PetForm?
+    var pet: PetModel?
 
     private let errorMessage = """
     Verifique as condições
@@ -24,13 +24,14 @@ final class PetFormViewController: UIViewController {
     """
 
     override func viewDidLoad() {
-        if let petForm = self.petForm {
-            self.fullFillForm(with: petForm)
-            self.title = "Editar Pet"
-        } else {
-            self.title = "Adicionar Pet"
-        }
+        self.checkIfHasPet()
     }
+
+}
+
+// MARK: View actions
+
+extension PetFormViewController {
 
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         if let petForm = self.getValidForm() {
@@ -41,10 +42,25 @@ final class PetFormViewController: UIViewController {
         }
     }
 
-    private func fullFillForm(with petForm: PetForm) {
-        self.nameLabel.text = petForm.name
-        self.genderLabel.text = petForm.gender
-        self.specieLabel.text = petForm.specie
+}
+
+// MARK: Private methods
+
+extension PetFormViewController {
+
+    private func checkIfHasPet() {
+        if let pet = self.pet {
+            self.fullFillForm(with: pet)
+            self.title = "Editar Pet"
+        } else {
+            self.title = "Adicionar Pet"
+        }
+    }
+
+    private func fullFillForm(with pet: PetModel) {
+        self.nameLabel.text = pet.name
+        self.genderLabel.text = pet.gender
+        self.specieLabel.text = pet.specie
     }
 
     private func getValidForm() -> PetForm? {
@@ -53,7 +69,7 @@ final class PetFormViewController: UIViewController {
             let specie = self.getValidSpecie()
             else { return nil }
 
-        return PetForm(uuid: self.petForm?.uuid, name: name, gender: gender, specie: specie)
+        return PetForm(uuid: self.pet?.uuid, name: name, gender: gender, specie: specie)
     }
 
     private func getValidName() -> String? {
@@ -81,7 +97,7 @@ final class PetFormViewController: UIViewController {
     }
 
     private func savePet(with petForm: PetForm) {
-        if let uuid = petForm.uuid, var pet = PetModel.get(with: uuid) {
+        if let uuid = petForm.uuid, var pet = PetModel.get(byUuid: uuid) {
             pet.name = petForm.name
             pet.gender = petForm.gender
             pet.specie = petForm.specie
@@ -102,4 +118,5 @@ final class PetFormViewController: UIViewController {
         alertController.addAction(closeButton)
         self.present(alertController, animated: true)
     }
+
 }
