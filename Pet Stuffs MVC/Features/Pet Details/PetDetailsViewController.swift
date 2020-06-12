@@ -45,6 +45,8 @@ final class PetDetailsViewController: UIViewController {
 
 }
 
+// MARK: Table view data source
+
 extension PetDetailsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,6 +69,8 @@ extension PetDetailsViewController: UITableViewDataSource {
     }
 
 }
+
+// MARK: Table view delegate
 
 extension PetDetailsViewController: UITableViewDelegate {
 
